@@ -68,8 +68,18 @@ function HomePage() {
             <IsLoadingContext.Provider value={{ isLoading, setIsLoading }}>
                 <DataContext.Provider value={{ data: results, setState: setResults }}>
                     <S.App />
-                    <Navbar requestRecipes={requestRecipes} setCurrentRoute={setCurrentRoute} />
-                    <Routes requestFromUrl={requestRecipesFromPagination} pagination={pagination} requestRecipes={requestRecipes} setFilterQuery={setFilterQuery} currentRoute={currentRoute} selectedRecipe={selectedRecipe} setCurrentRoute={setCurrentRoute} setSelectedRecipe={setSelectedRecipe} />
+                    <Navbar
+                        requestRecipes={requestRecipes}
+                        setCurrentRoute={setCurrentRoute} />
+                    <Routes  //would've used react-router or next.js built-in routing, but only website only has 2 pages, preferred to write logic by hand to avoid reloading.
+                        requestFromUrl={requestRecipesFromPagination}
+                        pagination={pagination}
+                        requestRecipes={requestRecipes}
+                        setFilterQuery={setFilterQuery}
+                        currentRoute={currentRoute}
+                        selectedRecipe={selectedRecipe}
+                        setCurrentRoute={setCurrentRoute}
+                        setSelectedRecipe={setSelectedRecipe} />
                 </DataContext.Provider>
             </IsLoadingContext.Provider>
         </div>
