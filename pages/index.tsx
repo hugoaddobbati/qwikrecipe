@@ -45,20 +45,14 @@ function HomePage() {
     }
 
     const requestRecipes = (random: boolean) => {
-        if (random) {
-            setFilters({ ...filters, random: true })
-        }
-        else {
-            setFilters({ ...filters, random: false })
-        }
         const options = {
-            filters,
-            handleResponse: (r, link) => { 
-                setResults(r); 
-                if(link){
+            filters: random ? { ...filters, random: true } : { ...filters, random: false },
+            handleResponse: (r, link) => {
+                setResults(r);
+                if (link) {
                     setPagination(link);
                 }
-                setIsLoading(false); 
+                setIsLoading(false);
             },
             handleLoading: setIsLoading
         }
