@@ -7,6 +7,9 @@ export const Container = styled.div`
     flex-direction: row;
     margin-top: 30px;
     margin-bottom: 30px;
+    @media screen and (max-width: 750px){
+        width: 20%;
+    }
 `;
 
 export const PaginationButton = styled.div`

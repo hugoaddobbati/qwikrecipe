@@ -1,7 +1,7 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { useState, useEffect } from 'react';
 
-import * as S from './styles';
+import * as S from '../globalStyles/styles';
 
 import RecipeCard from '../components/Card';
 import Navbar from '../components/Navbar';
@@ -16,7 +16,6 @@ import { getRecipes, getRecipesFromUrl } from '../api';
 import { IRecipe } from '../interfaces/recipe';
 
 const DEFAULT_ROUTE = "home";
-
 
 function HomePage() {
     const [query, setQuery] = useState("");

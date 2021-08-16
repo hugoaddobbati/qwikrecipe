@@ -11,9 +11,12 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({ requestFromUrl, 
     return (
         <>
             <S.Container>
-                <S.PaginationButton>
-                    <MdNavigateNext onClick={() => {requestFromUrl(pagination)}}/>
-                </S.PaginationButton>
+                {
+                    pagination &&
+                    <S.PaginationButton>
+                        <MdNavigateNext onClick={() => { requestFromUrl(pagination) }} />
+                    </S.PaginationButton>
+                }
             </S.Container>
         </>
     );

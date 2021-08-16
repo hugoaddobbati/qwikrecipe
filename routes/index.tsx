@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Home from "../pages/Home";
-import Details from "../pages/Details";
+import Home from "../components/Home";
+import Details from "../components/Details";
 
 import { IRoute } from "../interfaces/routes";
 
